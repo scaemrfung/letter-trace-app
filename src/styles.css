@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fffdf8;
+  --color-sky: #e7eef5;
+  --color-page: #e8eef5;
+  --color-ink: #243044;
+  --color-muted: #5d6b7c;
+  --color-line: #7eafd6;
+  --color-baseline: #5f97c4;
+  --color-mid: #e28b93;
+  --color-tail: #b7d3ea;
+  --color-blue: #2f6fed;
+  --color-green: #1f9d62;
+  --color-coral: #e36b4f;
+  --font-sans: "Nunito", "Avenir Next", system-ui, sans-serif;
+  --font-letter: "Fredoka", "Nunito", system-ui, sans-serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background:
+      radial-gradient(900px 420px at 8% -10%, #ffffff 0%, transparent 55%),
+      var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.rule {
+  position: absolute;
+  right: 6%;
+  left: 8%;
+  height: 0;
+  border-top: 2px solid var(--color-line);
+}
+
+.rule span {
+  position: absolute;
+  top: -0.95rem;
+  left: 0;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.rule-top {
+  top: 18%;
+}
+
+.rule-mid {
+  top: 42%;
+  border-top-style: dashed;
+  border-top-color: var(--color-mid);
+}
+
+.rule-base {
+  top: 66%;
+  border-top-width: 3px;
+  border-top-color: var(--color-baseline);
+}
+
+.rule-tail {
+  top: 86%;
+  border-top-color: var(--color-tail);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+}
